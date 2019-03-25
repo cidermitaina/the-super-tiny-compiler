@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>the-super-tiny-compiler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css" />
+  <style>
+    .field:last-child{
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          the-super-tiny-compiler.js
+        </h1>
+        <h2 class="subtitle">
+          LISP-style → C-style
+        </h2>
+        <p class="subtitle">
+          Please enter the correct syntax 😉
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="hero-body">
+    <div class="container">
+      <div class="field">
+        <label class="label">LISP-style</label>
+        <div class="control">
+          <input type="text" id="input" class="input is-primary is-inline" value="(add 2 (subtract 4 2))">
+        </div>
+      </div>
+      <div class="field">
+        <button id="button" class="button is-primary">compile</button>
+      </div>
+      <div class="field">
+        <label class="label">C-style</label>
+        <p id="text"></p>
+      </div>
+    </div>
+  </div>
+  <script type="module" crossorigin src="./6-compiler.js"></script>
+</body>
+</html>
