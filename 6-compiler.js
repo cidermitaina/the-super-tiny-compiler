@@ -5,11 +5,11 @@ import { transformer } from './4-transformer.js';
 import { codeGenerator } from './5-code-generator.js';
 
 const button = document.getElementById('button');
-const input = document.getElementById('input');
-const text = document.getElementById('text');
+const inputSyntax = document.getElementById('inputSyntax');
+const outputSyntax = document.getElementById('outputSyntax');
 
 button.addEventListener('click', function() {
-  let inputValue = input.value.trim();
+  const inputValue = inputSyntax.value.trim();
   
   // '('で始まり、')'で終わるか確認
   const inputValueRegex = /\(.*\)/;
@@ -20,7 +20,7 @@ button.addEventListener('click', function() {
     let newAst = transformer(ast);
     let output = codeGenerator(newAst);
     
-    text.textContent = output;
+    outputSyntax.textContent = output;
   }else {
     alert('正しい構文を入力してください');
   }
