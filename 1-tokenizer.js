@@ -27,7 +27,7 @@ export function tokenizer(input) {
     }
 
     //空白のcheck　トークンとして格納する必要はない
-    let WHITESPACE = /\s/;
+    const WHITESPACE = /\s/;
     if (WHITESPACE.test(char)) {
       current++;
       continue;
@@ -36,7 +36,7 @@ export function tokenizer(input) {
     //数字
     // 数値は任意の数の文字にして一連の文字全体を1つのトークンとしてキャプチャする
     //１文字ではなく（123 456）の場合などが考えられるので以下の処理
-    let NUMBERS = /[0-9]/;
+    const NUMBERS = /[0-9]/;
     if (NUMBERS.test(char)) {
       let value = '';
 
@@ -74,7 +74,7 @@ export function tokenizer(input) {
 
     // name token(lisp構文の関数名)
     // (add 2 4) のadd部分
-    let LETTERS = /[a-z]/i;
+    const LETTERS = /[a-z]/i;
     if (LETTERS.test(char)) {
       let value = '';
 
