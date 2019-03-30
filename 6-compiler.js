@@ -11,10 +11,10 @@ const text = document.getElementById('text');
 button.addEventListener('click', function() {
   let inputValue = input.value.trim();
   
-  let startStr = inputValue.slice( 0,1 ) ;
-  let endStr = inputValue.slice( -1 ) ;
+  // '('で始まり、')'で終わるか確認
+  const inputValueRegex = /\(.*\)/;
 
-  if (startStr === '(' && endStr === ')'){
+  if (inputValueRegex.test(inputValue)){
     let tokens = tokenizer(inputValue);
     let ast = parser(tokens);
     let newAst = transformer(ast);
