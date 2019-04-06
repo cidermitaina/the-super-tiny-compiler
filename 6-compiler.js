@@ -12,7 +12,7 @@ button.addEventListener('click', function() {
   const inputValue = inputSyntax.value.trim();
   
   // '('で始まり、')'で終わるか確認
-  const inputValueRegex = /\(.*\)/;
+  const inputValueRegex = /^\(.*\)$/;
 
   if (inputValueRegex.test(inputValue)){
     let tokens = tokenizer(inputValue);
